@@ -1,0 +1,13 @@
+name: Push de tag
+ 
+on:
+  push:
+    tags:
+      - 'v*'
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Un tag de version a été poussé"
