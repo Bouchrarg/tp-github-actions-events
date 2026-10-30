@@ -1,0 +1,12 @@
+name: Dispatch externe
+ 
+on:
+  repository_dispatch:
+    types: [deploiement]
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Événement reçu de l'extérieur - type ${{ github.event.action }}"
