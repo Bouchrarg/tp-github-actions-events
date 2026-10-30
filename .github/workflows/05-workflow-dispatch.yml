@@ -1,0 +1,20 @@
+name: Déclenchement manuel
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      environnement:
+        description: "Environnement cible"
+        required: true
+        default: "test"
+        type: choice
+        options:
+          - test
+          - production
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Lancement manuel pour l'environnement ${{ inputs.environnement }}"
