@@ -1,0 +1,12 @@
+name: Planification
+ 
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Exécution planifiée (toutes les 5 minutes)"
