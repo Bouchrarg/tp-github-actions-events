@@ -1,0 +1,13 @@
+name: Après le premier workflow
+ 
+on:
+  workflow_run:
+    workflows: ["Premier workflow"]
+    types: [completed]
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Le workflow « ${{ github.event.workflow_run.name }} » est terminé - conclusion ${{ github.event.workflow_run.conclusion }}"
