@@ -1,0 +1,14 @@
+name: Pull request
+ 
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, closed]
+ 
+jobs:
+  afficher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Pull request vers main - action ${{ github.event.action }}"
